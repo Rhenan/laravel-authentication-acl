@@ -1,10 +1,11 @@
 <?php namespace Jacopo\Authentication\Controllers;
 
-use Controller, View, Sentry, Input, Redirect, App, Config;
+use View, Sentry, Input, Redirect, App, Config;
 use Jacopo\Authentication\Validators\ReminderValidator;
 use Jacopo\Library\Exceptions\JacopoExceptionsInterface;
 use Jacopo\Authentication\Services\ReminderService;
 use Jacopo\Library\Exceptions\ValidationException;
+use Illuminate\Routing\Controller;
 
 class AuthController extends Controller {
 

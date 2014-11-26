@@ -9,9 +9,10 @@ use Jacopo\Authentication\Models\Permission;
 use Jacopo\Authentication\Validators\PermissionValidator;
 use Jacopo\Library\Exceptions\JacopoExceptionsInterface;
 use View, Input, Redirect, App, Config;
+use Illuminate\Routing\Controller;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class PermissionController extends \Controller
+class PermissionController extends Controller
 {
     /**
      * @var \Jacopo\Authentication\Repository\PermissionGroupRepository

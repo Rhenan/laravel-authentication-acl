@@ -13,8 +13,9 @@ use Jacopo\Authentication\Exceptions\UserNotFoundException;
 use Jacopo\Authentication\Validators\GroupValidator;
 use Jacopo\Library\Exceptions\JacopoExceptionsInterface;
 use View, Input, Redirect, App, Config;
+use Illuminate\Routing\Controller;
 
-class GroupController extends \Controller
+class GroupController extends Controller
 {
     /**
      * @var \Jacopo\Authentication\Repository\SentryGroupRepository

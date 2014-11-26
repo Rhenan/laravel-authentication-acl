@@ -21,7 +21,8 @@ use Jacopo\Authentication\Exceptions\UserNotFoundException;
 use Jacopo\Authentication\Validators\UserValidator;
 use Jacopo\Library\Exceptions\JacopoExceptionsInterface;
 use Jacopo\Authentication\Validators\UserProfileValidator;
-use View, Input, Redirect, App, Config, Controller;
+use View, Input, Redirect, App, Config;
+use Illuminate\Routing\Controller;
 use Jacopo\Authentication\Interfaces\AuthenticateInterface;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 

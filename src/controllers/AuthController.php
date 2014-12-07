@@ -27,7 +27,7 @@ class AuthController extends Controller {
 
     public function getAdminLogin()
     {
-        return View::make('laravel-authentication-acl::admin.auth.login');
+        return view('laravel-authentication-acl::admin.auth.login');
     }
 
     public function postAdminLogin()

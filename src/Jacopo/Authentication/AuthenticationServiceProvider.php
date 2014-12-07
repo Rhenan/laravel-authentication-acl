@@ -135,12 +135,15 @@ class AuthenticationServiceProvider extends ServiceProvider
         $this->app->register('Jacopo\Library\LibraryServiceProvider');
         $this->app->register('Cartalyst\Sentry\SentryServiceProvider');
         $this->app->register('Intervention\Image\ImageServiceProvider');
+        $this->registerIlluminateForm();
     }
 
     protected function registerAliases()
     {
         AliasLoader::getInstance()->alias("Sentry", 'Cartalyst\Sentry\Facades\Laravel\Sentry');
         AliasLoader::getInstance()->alias("Image", 'Intervention\Image\Facades\Image');
+        $this->registerIlluminateFormAlias();
+
     }
 
     protected function setupConnection()
@@ -216,5 +219,16 @@ class AuthenticationServiceProvider extends ServiceProvider
         App::instance('config', new ConfigMiddleware());
 
         Config::swap(new ConfigMiddleware());
+    }
+
+    protected function registerIlluminateForm()
+    {
+        $this->app->register('Illuminate\Html\HtmlServiceProvider');
+    }
+
+    protected function registerIlluminateFormAlias()
+    {
+        AliasLoader::getInstance()->alias('Form', 'Illuminate\Html\FormFacade');
+        AliasLoader::getInstance()->alias('HTML', 'Illuminate\Html\HtmlFacade');
     }
 }

@@ -11,12 +11,12 @@
                 {{-- print messages --}}
                 <?php $message = Session::get('message'); ?>
                 @if( isset($message) )
-                    <div class="alert alert-success">{{$message}}</div>
+                    <div class="alert alert-success">{!! $message !!}</div>
                 @endif
                 {{-- print errors --}}
                 @if($errors && ! $errors->isEmpty() )
                     @foreach($errors->all() as $error)
-                        <div class="alert alert-danger">{{$error}}</div>
+                        <div class="alert alert-danger">{!! $error !!}</div>
                     @endforeach
                 @endif
                 {{-- user lists --}}

@@ -19,24 +19,24 @@ Admin area: edit group
         @endif
         <div class="panel panel-info">
             <div class="panel-heading">
-                    <h3 class="panel-title bariol-thin">{{isset($group->id) ? '<i class="fa fa-pencil"></i> Edit' : '<i class="fa fa-users"></i> Create'}} group</h3>
+                    <h3 class="panel-title bariol-thin">{!! isset($group->id) ? '<i class="fa fa-pencil"></i> Edit' : '<i class="fa fa-users"></i> Create' !!} group</h3>
             </div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
                         {{-- group base form --}}
                         <h4>General data</h4>
-                        {{Form::model($group, [ 'url' => [URL::action('Jacopo\Authentication\Controllers\GroupController@postEditGroup'), $group->id], 'method' => 'post'] ) }}
+                        {!! Form::model($group, [ 'url' => [URL::action('Jacopo\Authentication\Controllers\GroupController@postEditGroup'), $group->id], 'method' => 'post'] ) !!}
                         <!-- name text field -->
                         <div class="form-group">
-                            {{Form::label('name','Name: *')}}
-                            {{Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'group name'])}}
+                            {!! Form::label('name','Name: *') !!}
+                            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'group name']) !!}
                         </div>
-                        <span class="text-danger">{{$errors->first('name')}}</span>
-                        {{Form::hidden('id')}}
-                        <a href="{{URL::action('Jacopo\Authentication\Controllers\GroupController@deleteGroup',['id' => $group->id, '_token' => csrf_token()])}}" class="btn btn-danger pull-right margin-left-5 delete">Delete</a>
-                        {{Form::submit('Save', array("class"=>"btn btn-info pull-right "))}}
-                        {{Form::close()}}
+                        <span class="text-danger">{!! $errors->first('name') !!}</span>
+                        {!! Form::hidden('id') !!}
+                        <a href="{!! URL::action('Jacopo\Authentication\Controllers\GroupController@deleteGroup',['id' => $group->id, '_token' => csrf_token()]) !!}" class="btn btn-danger pull-right margin-left-5 delete">Delete</a>
+                        {!! Form::submit('Save', array("class"=>"btn btn-info pull-right ")) !!}
+                        {!! Form::close() !!}
                     </div>
                     <div class="col-md-6 col-xs-12">
                     {{-- group permission form --}}

@@ -15,23 +15,23 @@
             @endforeach
             @endif
             <div class="panel-body">
-                {{Form::open(array('url' => URL::action("Jacopo\Authentication\Controllers\AuthController@postReminder"), 'method' => 'post') )}}
+                {!! Form::open(array('url' => URL::action("Jacopo\Authentication\Controllers\AuthController@postReminder"), 'method' => 'post') ) !!}
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            {{Form::label('email','Email:')}}
+                            {!! Form::label('email','Email:') !!}
                             <div class="input-group" id="password-field">
                                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                {{Form::email('email', '', ['id' => 'email', 'class' => 'form-control', 'placeholder' => 'Your account email', 'required', 'autocomplete' => 'off'])}}
+                                {!! Form::email('email', '', ['id' => 'email', 'class' => 'form-control', 'placeholder' => 'Your account email', 'required', 'autocomplete' => 'off']) !!}
                             </div>
                         </div>
                     </div>
                 </div>
                 <input type="submit" value="Recover" class="btn btn-info btn-block">
-                {{Form::close()}}
+                {!! Form::close() !!}
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 margin-top-10">
-                        <a href="{{URL::Action('Jacopo\Authentication\Controllers\AuthController@getClientLogin')}}"><i class="fa fa-arrow-left"></i> Back to login</a>
+                        <a href="{!! URL::Action('Jacopo\Authentication\Controllers\AuthController@getClientLogin') !!}"><i class="fa fa-arrow-left"></i> Back to login</a>
                     </div>
                 </div>
             </div>

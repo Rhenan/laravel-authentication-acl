@@ -9,7 +9,7 @@
         <h1><i class="fa fa-exclamation-triangle"></i> 500</h1>
         <p class="lead">
             Sorry, there was an error.
-            <a href="{{URL::to('/')}}"><i class="fa fa-home"></i> Go to homepage</a>
+            <a href="{!! URL::to('/') !!}"><i class="fa fa-home"></i> Go to homepage</a>
         </p>
     </div>
 </div>
